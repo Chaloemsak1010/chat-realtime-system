@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--bg: 255 255 255;
+	--fg: 17 24 39;
+	/* chat theme vars */
+	--bubble-self-bg: #111827; /* default dark */
+	--bubble-self-fg: #ffffff;
+	--bubble-other-bg: #f3f4f6; /* gray-100 */
+	--bubble-other-fg: #111827;
+	--accent-start: #8a2be2; /* purple/blue gradient */
+	--accent-end: #4f46e5;
+}
+
+/* Themes */
+:root[data-theme='default'] {
+	--bubble-self-bg: #111827;
+	--bubble-self-fg: #ffffff;
+	--bubble-other-bg: #f3f4f6;
+	--bubble-other-fg: #111827;
+	--accent-start: #8a2be2;
+	--accent-end: #4f46e5;
+}
+:root[data-theme='blue'] {
+	--bubble-self-bg: #3b82f6; /* blue-500 */
+	--bubble-self-fg: #ffffff;
+	--bubble-other-bg: #e0f2fe; /* sky-100 */
+	--bubble-other-fg: #0c4a6e; /* slate-ish */
+	--accent-start: #60a5fa;
+	--accent-end: #2563eb;
+}
+:root[data-theme='purple'] {
+	--bubble-self-bg: #7c3aed; /* violet-600 */
+	--bubble-self-fg: #ffffff;
+	--bubble-other-bg: #ede9fe; /* violet-100 */
+	--bubble-other-fg: #4c1d95;
+	--accent-start: #a78bfa;
+	--accent-end: #7c3aed;
+}
+:root[data-theme='green'] {
+	--bubble-self-bg: #22c55e; /* green-500 */
+	--bubble-self-fg: #052e16;
+	--bubble-other-bg: #dcfce7; /* green-100 */
+	--bubble-other-fg: #14532d;
+	--accent-start: #86efac;
+	--accent-end: #22c55e;
+}
+:root[data-theme='orange'] {
+	--bubble-self-bg: #f97316; /* orange-500 */
+	--bubble-self-fg: #3b1700;
+	--bubble-other-bg: #ffedd5; /* orange-100 */
+	--bubble-other-fg: #7c2d12;
+	--accent-start: #fdba74;
+	--accent-end: #f97316;
+}
+:root[data-theme='red'] {
+	--bubble-self-bg: #ef4444; /* red-500 */
+	--bubble-self-fg: #3f0b0b;
+	--bubble-other-bg: #fee2e2; /* red-100 */
+	--bubble-other-fg: #7f1d1d;
+	--accent-start: #fca5a5;
+	--accent-end: #ef4444;
+}
+:root[data-theme='yellow'] {
+	--bubble-self-bg: #f59e0b; /* amber-500 */
+	--bubble-self-fg: #3a1e00;
+	--bubble-other-bg: #fef3c7; /* amber-100 */
+	--bubble-other-fg: #78350f;
+	--accent-start: #fde68a;
+	--accent-end: #f59e0b;
+}
+:root[data-theme='pink'] {
+	--bubble-self-bg: #ec4899; /* pink-500 */
+	--bubble-self-fg: #3a0a1e;
+	--bubble-other-bg: #fce7f3; /* pink-100 */
+	--bubble-other-fg: #831843;
+	--accent-start: #f9a8d4;
+	--accent-end: #ec4899;
+}
+
+html, body, #__next {
+	height: 100%;
+}
+
+body {
+	background-color: rgb(var(--bg));
+	color: rgb(var(--fg));
+}
+
+/* Simple modern chat layout helpers */
+.container {
+	@apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card {
+	@apply rounded-lg border bg-white shadow-sm;
+}
+
+@layer components {
+	.btn { @apply rounded-md px-3 text-sm; }
+	.btn-primary { @apply btn text-white; background: var(--accent-end); }
+	.btn-outline { @apply btn border; }
+}
